@@ -1,0 +1,41 @@
+{
+  "name": "circular-primes",
+  "version": "1.0.0",
+  "description": "Assessment for Needen Corp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.js' --recursive --timeout 60000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevelagarto/circularPrimes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevelagarto/circularPrimes/issues"
+  },
+  "env": {
+    "commonjs": true,
+    "node": true,
+    "mocha": true
+  },
+  "homepage": "https://github.com/stevelagarto/circularPrimes#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^7.0.1",
+    "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "@types/node": "^13.7.4"
+  }
+}
