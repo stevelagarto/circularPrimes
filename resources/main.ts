@@ -1,6 +1,9 @@
 'use strict';
 
-const isANumber = (userInput : number) : boolean => !isNaN(userInput);
+const isANumber = (userInput : number) : boolean => {
+  if (userInput === null) return false;
+  return !isNaN(userInput);
+};
 
 const isCircularPrime = (userInput : number) : boolean => {
   const numberLength: number = userInput.toString().length;
@@ -33,7 +36,7 @@ const listOfCircularPrimes = (userInput: number): Array<number> => {
     for (let x = 2; x <= userInput; x++) {
       isCircularPrime(x) && circularPrimesList.push(x);
     }
-    console.log('Result', circularPrimesList);
+
     return circularPrimesList;
   }
 };
