@@ -1,5 +1,8 @@
 'use strict';
 
+require('./style.css');
+require('./normalize.css');
+
 const input = (<HTMLInputElement>document.getElementById('input'));
 const listPlaceHolder = (<HTMLInputElement>document.getElementById('results'));
 
@@ -26,7 +29,7 @@ input.addEventListener('keyup', ((event: CustomEvent) => {
 
   listPlaceHolder.innerHTML = '';
 
-  if (resultList !== null && resultList.length >= 1) {
+  if (resultList && resultList.length >= 1) {
     resultList.forEach((circularPrimeNumber) => {
       const circularPrimeNumberItem = document.createElement('DIV');
       circularPrimeNumberItem.classList.add('circularPrime');
@@ -39,7 +42,7 @@ input.addEventListener('keyup', ((event: CustomEvent) => {
   // input.value = '';
 }) as EventListener);
 
-const getError = (resultList) => {
+const getError = (resultList: Array<number>): string => {
   if (resultList === null) return 'Wrong input, insert a number';
   else if (input.value === '') return 'Insert a number';
   else if (Number(input.value) < 2) return 'No results';
@@ -48,7 +51,7 @@ const getError = (resultList) => {
 
 // PURE FUNCTIONS
 // ---------------------------------------------------------------------------------------------------
-
+export {};
 const isANumber = (userInput : number) : boolean => {
   if (userInput === null) return false;
   return !isNaN(userInput);
@@ -79,7 +82,7 @@ const isPrime = (num : number): boolean => {
   return num > 1;
 };
 
-const listOfCircularPrimes = (userInput: number): Array<number> => {
+const listOfCircularPrimes = (userInput: number): any => {
   const circularPrimesList: Array<number> = [];
   if (isANumber(userInput)) {
     for (let x = 2; x <= userInput; x++) {
@@ -89,11 +92,3 @@ const listOfCircularPrimes = (userInput: number): Array<number> => {
     return circularPrimesList;
   } else return null;
 };
-
-// export {
-//   isANumber,
-//   isCircularPrime,
-//   numberCircularVariation,
-//   listOfCircularPrimes,
-//   isPrime
-// };
