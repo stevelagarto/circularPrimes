@@ -1,16 +1,27 @@
 'use strict';
 var input = document.getElementById('input');
 var listPlaceHolder = document.getElementById('results');
-var form = document.getElementById('form');
 input.setAttribute('placeholder', 'Insert a number...');
-form.addEventListener('submit', (function (event) {
+input.addEventListener('focus', (function (event) {
     event.preventDefault();
+    input.setAttribute('placeholder', '');
+    // input.value = '';
+}));
+input.addEventListener('blur', (function (event) {
+    event.preventDefault();
+    input.setAttribute('placeholder', 'Insert a number...');
+    // input.value = '';
+}));
+input.addEventListener('keyup', (function (event) {
+    event.preventDefault();
+    // if (input.value === '') input.setAttribute('placeholder', 'Insert a number...');
     var inputValue = Number(input.value);
     var resultList = listOfCircularPrimes(inputValue);
     listPlaceHolder.innerHTML = '';
     if (resultList !== null && resultList.length >= 1) {
         resultList.forEach(function (circularPrimeNumber) {
-            var circularPrimeNumberItem = document.createElement('LI');
+            var circularPrimeNumberItem = document.createElement('DIV');
+            circularPrimeNumberItem.classList.add('circularPrime');
             circularPrimeNumberItem.innerText = (circularPrimeNumber.toString());
             listPlaceHolder.appendChild(circularPrimeNumberItem);
         });
@@ -19,7 +30,7 @@ form.addEventListener('submit', (function (event) {
         listPlaceHolder.innerHTML = getError(resultList);
     }
     ;
-    input.value = '';
+    // input.value = '';
 }));
 var getError = function (resultList) {
     if (resultList === null)

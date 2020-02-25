@@ -2,28 +2,41 @@
 
 const input = (<HTMLInputElement>document.getElementById('input'));
 const listPlaceHolder = (<HTMLInputElement>document.getElementById('results'));
-const form = (<HTMLInputElement>document.getElementById('form'));
 
 input.setAttribute('placeholder', 'Insert a number...');
 
-form.addEventListener('submit', ((event: CustomEvent) => {
+input.addEventListener('focus', ((event: CustomEvent) => {
   event.preventDefault();
+  input.setAttribute('placeholder', '');
+  // input.value = '';
+}) as EventListener);
+
+input.addEventListener('blur', ((event: CustomEvent) => {
+  event.preventDefault();
+  input.setAttribute('placeholder', 'Insert a number...');
+  // input.value = '';
+}) as EventListener);
+
+input.addEventListener('keyup', ((event: CustomEvent) => {
+  event.preventDefault();
+  // if (input.value === '') input.setAttribute('placeholder', 'Insert a number...');
   const inputValue = Number(input.value);
 
-  const resultList = listOfCircularPrimes(inputValue);
+  const resultList: Array<number> = listOfCircularPrimes(inputValue);
 
   listPlaceHolder.innerHTML = '';
 
   if (resultList !== null && resultList.length >= 1) {
     resultList.forEach((circularPrimeNumber) => {
-      const circularPrimeNumberItem = document.createElement('LI');
+      const circularPrimeNumberItem = document.createElement('DIV');
+      circularPrimeNumberItem.classList.add('circularPrime');
       circularPrimeNumberItem.innerText = (circularPrimeNumber.toString());
       listPlaceHolder.appendChild(circularPrimeNumberItem);
     });
   } else {
     listPlaceHolder.innerHTML = getError(resultList);
   };
-  input.value = '';
+  // input.value = '';
 }) as EventListener);
 
 const getError = (resultList) => {
