@@ -1,6 +1,10 @@
 'use strict';
 exports.__esModule = true;
-var isANumber = function (userInput) { return !isNaN(userInput); };
+var isANumber = function (userInput) {
+    if (userInput === null)
+        return false;
+    return !isNaN(userInput);
+};
 exports.isANumber = isANumber;
 var isCircularPrime = function (userInput) {
     var numberLength = userInput.toString().length;
@@ -33,7 +37,6 @@ var listOfCircularPrimes = function (userInput) {
         for (var x = 2; x <= userInput; x++) {
             isCircularPrime(x) && circularPrimesList.push(x);
         }
-        console.log('Result', circularPrimesList);
         return circularPrimesList;
     }
 };
