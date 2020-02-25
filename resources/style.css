@@ -1,3 +1,10 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #959595;
+  opacity: 1; /* Firefox */
+  font-size: 2.3rem;
+  line-height: 100px;
+}
+
 input { 
   padding: 5px;
 }
@@ -33,19 +40,23 @@ button:active {
 }
 input {
   color: transparent;
-  text-shadow: 0 0 0 #2196f3;
+  text-shadow: 0 0 0 #959595;
 }
 
 .input {
-  border: 4px #eda600 solid;
-  width: 400px;
+  border: 8px #a5a5a5 solid;
+  width: 420px;
   height: 100px;
   text-align: center;
   font-size: 3rem;
+  font-weight: 700;
+  border-radius: 30px;
 }
 .input:focus {
-  border: #2196f3 4px solid;
+  border: #2196f3 8px solid;
   outline: none;
+  color: transparent;
+  text-shadow: 0 0 0 #2196f3;
 }
 
 &:focus {
@@ -72,6 +83,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 
 }
 .list {
@@ -84,8 +96,8 @@ input {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  color: rgb(255, 83, 83);
+  font-size: 1.5rem;
+  color: #959595;
 
 }
 
