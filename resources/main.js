@@ -10,7 +10,8 @@ form.addEventListener('submit', (function (event) {
     listPlaceHolder.innerHTML = '';
     if (resultList !== null && resultList.length >= 1) {
         resultList.forEach(function (circularPrimeNumber) {
-            var circularPrimeNumberItem = document.createElement('LI');
+            var circularPrimeNumberItem = document.createElement('DIV');
+            circularPrimeNumberItem.classList.add('circularPrime');
             circularPrimeNumberItem.innerText = (circularPrimeNumber.toString());
             listPlaceHolder.appendChild(circularPrimeNumberItem);
         });

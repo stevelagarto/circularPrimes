@@ -1,0 +1,100 @@
+input { 
+  padding: 5px;
+}
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 16px;
+  text-decoration: none;
+  background: #eda600;
+  color: #ffffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #fbc163;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+input {
+  color: transparent;
+  text-shadow: 0 0 0 #2196f3;
+}
+
+.input {
+  border: 4px #eda600 solid;
+  width: 400px;
+  height: 100px;
+  text-align: center;
+  font-size: 3rem;
+}
+.input:focus {
+  border: #2196f3 4px solid;
+  outline: none;
+}
+
+&:focus {
+  outline: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: rgb(255, 83, 83);
+
+}
+
+.circularPrime {
+  padding: 10px;
+  margin: 5px;
+  background-color: #2196f3;
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+  border-radius: 5px;
+}

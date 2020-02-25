@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <script src="resources/main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="resources/normalize.css">
+  <link rel="stylesheet" type="text/css" href="resources/style.css">
   <title>Circular Primes</title>
 </head>
 <body>
-  <form id='form'>
-  <input type="text" name="input" id="input" class="input">
-  <button id='submitButton'>Get List</button>
-  <ul id="results"></ul>
+  <div class="container">
+    <form id='form'>
+      <div class="center">
+    <input type="text" name="input" id="input" class="input">
+  </div>
+  <div class="center">
+    <button id='submitButton'>Get List</button>
+    <div class="list">
+    <div class="results" id="results"></div>
+  </div>
+  </div>
   </form>
+</div>
   
 </body>
 </html>

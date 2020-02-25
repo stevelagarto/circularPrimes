@@ -10,13 +10,14 @@ form.addEventListener('submit', ((event: CustomEvent) => {
   event.preventDefault();
   const inputValue = Number(input.value);
 
-  const resultList = listOfCircularPrimes(inputValue);
+  const resultList: Array<number> = listOfCircularPrimes(inputValue);
 
   listPlaceHolder.innerHTML = '';
 
   if (resultList !== null && resultList.length >= 1) {
     resultList.forEach((circularPrimeNumber) => {
-      const circularPrimeNumberItem = document.createElement('LI');
+      const circularPrimeNumberItem = document.createElement('DIV');
+      circularPrimeNumberItem.classList.add('circularPrime');
       circularPrimeNumberItem.innerText = (circularPrimeNumber.toString());
       listPlaceHolder.appendChild(circularPrimeNumberItem);
     });
