@@ -48,3 +48,5 @@ export {
   listOfCircularPrimes,
   isPrime
 };
+
+console.log(listOfCircularPrimes(100));

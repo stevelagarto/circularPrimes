@@ -41,3 +41,4 @@ var listOfCircularPrimes = function (userInput) {
     }
 };
 exports.listOfCircularPrimes = listOfCircularPrimes;
+console.log(listOfCircularPrimes(100));
