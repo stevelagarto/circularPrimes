@@ -1,5 +1,41 @@
 'use strict';
 
+const input = (<HTMLInputElement>document.getElementById('input'));
+const listPlaceHolder = (<HTMLInputElement>document.getElementById('results'));
+const form = (<HTMLInputElement>document.getElementById('form'));
+
+input.setAttribute('placeholder', 'Insert a number...');
+
+form.addEventListener('submit', ((event: CustomEvent) => {
+  event.preventDefault();
+  const inputValue = Number(input.value);
+
+  const resultList = listOfCircularPrimes(inputValue);
+
+  listPlaceHolder.innerHTML = '';
+
+  if (resultList !== null && resultList.length >= 1) {
+    resultList.forEach((circularPrimeNumber) => {
+      const circularPrimeNumberItem = document.createElement('LI');
+      circularPrimeNumberItem.innerText = (circularPrimeNumber.toString());
+      listPlaceHolder.appendChild(circularPrimeNumberItem);
+    });
+  } else {
+    listPlaceHolder.innerHTML = getError(resultList);
+  };
+  input.value = '';
+}) as EventListener);
+
+const getError = (resultList) => {
+  if (resultList === null) return 'Wrong input, insert a number';
+  else if (input.value === '') return 'Insert a number';
+  else if (Number(input.value) < 2) return 'No results';
+  return 'Unexpected error';
+};
+
+// PURE FUNCTIONS
+// ---------------------------------------------------------------------------------------------------
+
 const isANumber = (userInput : number) : boolean => {
   if (userInput === null) return false;
   return !isNaN(userInput);
@@ -38,13 +74,13 @@ const listOfCircularPrimes = (userInput: number): Array<number> => {
     }
 
     return circularPrimesList;
-  }
+  } else return null;
 };
 
-export {
-  isANumber,
-  isCircularPrime,
-  numberCircularVariation,
-  listOfCircularPrimes,
-  isPrime
-};
+// export {
+//   isANumber,
+//   isCircularPrime,
+//   numberCircularVariation,
+//   listOfCircularPrimes,
+//   isPrime
+// };
