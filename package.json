@@ -4,7 +4,7 @@
   "description": "Assessment for Needen Corp",
   "main": "index.js",
   "scripts": {
-    "test": "mocha '**/*.spec.ts' --recursive --timeout 60000 --exit",
+    "test": "mocha -r ts-node/register '**/*.spec.ts' --recursive --timeout 60000 --exit",
     "build": "webpack --config=webpack/webpack.config.js"
   },
   "repository": {

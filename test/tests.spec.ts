@@ -6,7 +6,7 @@ const {
   numberCircularVariation,
   isCircularPrime,
   listOfCircularPrimes
-} = require('../resources/main.js');
+} = require('../src/helpers.ts');
 const { assert } = require('chai');
 
 describe('CircularPrimes Functions', () => {
