@@ -23,8 +23,8 @@ const webpackInitConfig = {
         test: /\.js/,
         exclude: /node_modules/,
         use: [
-          'babel-loader',
-          'eslint-loader'
+          'babel-loader'
+          // 'eslint-loader' Fix the indentation from the .js files created by .ts files
         ]
       },
       {
