@@ -13,7 +13,7 @@ npm run watch - to build the ./dist folder with every change
 npm run serve - to serve ./dist
 npm t - to run tests with Mocha.
 
-Stack: Vanilla JS, Webpack, Mocha and Chai.
+Stack: Vanilla JS, Webpack, Typescript, Mocha and Chai.
 
 By Steven Becker Santos.
 
