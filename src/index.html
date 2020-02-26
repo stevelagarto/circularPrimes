@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <script src="resources/main.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="resources/normalize.css">
-  <link rel="stylesheet" type="text/css" href="resources/style.css">
   <title>Circular Primes</title>
 </head>
 <body>
   <div class="container">
-    
-      <div class="center">
-    <input maxlength="6" type="text" name="input" id="input" class="input" />
+    <div class="left"></div>
+    <div class="center">
+      <h1>CIRCULAR PRIMES</h1>
+      <h2>Enter a number to see a list of the circular primes between 1 and your number</h2>
+      <input maxlength="6" type="text" name="input" id="input" class="input" />
+      <div class="list">
+        <div class="messages" id="messages"></div>
+        <div class="results" id="results"></div>
+      </div>
+    </div>
+    <div class="right"></div>
   </div>
-  <div class="center">
-    <div class="list">
-    <div class="results" id="results"></div>
-  </div>
-  </div>
-  
-</div>
-  
 </body>
 </html>

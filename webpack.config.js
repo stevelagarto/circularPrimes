@@ -37,8 +37,7 @@ const webpackInitConfig = {
         exclude: /node_modules/,
         use: [
           MiniCSSExtract.loader,
-          'css-loader',
-          'postcss-loader'
+          'css-loader'
         ]
       }
     ]
