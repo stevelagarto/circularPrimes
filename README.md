@@ -7,11 +7,11 @@ Clone repository from https://github.com/stevelagarto/circularPrimes.git to your
 
 cd circularPrimes
 
-npm install - to install dependencies
-npm run build - to build the ./dist folder
-npm run watch - to build the ./dist folder with every change
-npm run serve - to serve ./dist
-npm t - to run tests with Mocha.
+npm install - to install dependencies</br>
+npm run build - to build the ./dist folder</br>
+npm run watch - to build the ./dist folder with every change</br>
+npm run serve - to serve ./dist</br>
+npm t - to run tests with Mocha</br>
 
 Stack: Vanilla JS, Webpack, Typescript, Mocha and Chai.
 
